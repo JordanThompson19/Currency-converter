@@ -1,0 +1,29 @@
+<h2>Currency Converter</h2>
+
+@if (currencies) {
+<form [formGroup]="conversionForm">
+  <mat-form-field>
+    <input matInput formControlName="fromValue" placeholder="0" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select formControlName="fromCurrency">
+      @for (currency of currencies; track currency) {
+      <mat-option [value]="currency.short_code">{{ currency.name }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput formControlName="toValue" placeholder="0" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select formControlName="toCurrency">
+      @for (currency of currencies; track currency) {
+      <mat-option [value]="currency.short_code">{{ currency.name }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</form>
+}
