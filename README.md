@@ -1,5 +1,9 @@
 # Currency-converter
 
+This project requires the latest node LTS version, and to have Angular CLI installed globally.
+https://github.com/angular/angular-cli
+https://nodejs.org/en
+
 To get started, clone the repository and navigate into the currency-converter folder in a terminal window
 
 Run `npm i`
