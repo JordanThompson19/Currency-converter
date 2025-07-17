@@ -11,3 +11,9 @@ Run `npm i`
 Once completed the application can be ran from the folder using `ng serve` and navigating to `http://localhost:4200/`
 
 Unit test suite can be run using `ng test`
+
+
+
+Assumptions and Decisions made in this project:
+Selects were implemented instead of autocompletes.
+Improvements can be made, some of which are labelled in the code.
