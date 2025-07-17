@@ -2,28 +2,38 @@
 
 @if (currencies) {
 <form [formGroup]="conversionForm">
-  <mat-form-field>
-    <input matInput formControlName="fromValue" placeholder="0" />
-  </mat-form-field>
+  <span class="fromFormFields">
+    <mat-form-field>
+      <input matInput formControlName="fromValue" placeholder="0" />
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-select formControlName="fromCurrency">
-      @for (currency of currencies; track currency) {
-      <mat-option [value]="currency.short_code">{{ currency.name }}</mat-option>
-      }
-    </mat-select>
-  </mat-form-field>
+    <mat-form-field>
+      <mat-select formControlName="fromCurrency">
+        @for (currency of currencies; track currency) {
+        <mat-option [value]="currency.short_code"
+          >{{ currency.name }} ({{ currency.symbol }})</mat-option
+        >
+        }
+      </mat-select>
+    </mat-form-field>
+  </span>
 
-  <mat-form-field>
-    <input matInput formControlName="toValue" placeholder="0" />
-  </mat-form-field>
+  <span class="toFormFields">
+    <mat-form-field>
+      <input matInput formControlName="toValue" placeholder="0" />
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-select formControlName="toCurrency">
-      @for (currency of currencies; track currency) {
-      <mat-option [value]="currency.short_code">{{ currency.name }}</mat-option>
-      }
-    </mat-select>
-  </mat-form-field>
+    <mat-form-field>
+      <mat-select formControlName="toCurrency">
+        @for (currency of currencies; track currency) {
+        <mat-option [value]="currency.short_code"
+          >{{ currency.name }} ({{ currency.symbol }})</mat-option
+        >
+        }
+      </mat-select>
+    </mat-form-field>
+  </span>
 </form>
+<p>1 {{ selectedTo }} equals {{ baseRate }} {{ selectedFrom }}</p>
+
 }
